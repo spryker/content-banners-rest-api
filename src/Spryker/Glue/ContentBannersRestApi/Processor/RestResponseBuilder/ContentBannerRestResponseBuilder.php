@@ -23,17 +23,11 @@ class ContentBannerRestResponseBuilder implements ContentBannerRestResponseBuild
      */
     protected $restResourceBuilder;
 
-    /**
-     * @param \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResourceBuilderInterface $restResourceBuilder
-     */
     public function __construct(RestResourceBuilderInterface $restResourceBuilder)
     {
         $this->restResourceBuilder = $restResourceBuilder;
     }
 
-    /**
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
-     */
     public function createContentBannerIdNotSpecifiedErrorResponse(): RestResponseInterface
     {
         return $this->restResourceBuilder
@@ -46,9 +40,6 @@ class ContentBannerRestResponseBuilder implements ContentBannerRestResponseBuild
             );
     }
 
-    /**
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
-     */
     public function createContentBannerNotFoundErrorResponse(): RestResponseInterface
     {
         return $this->restResourceBuilder
@@ -61,9 +52,6 @@ class ContentBannerRestResponseBuilder implements ContentBannerRestResponseBuild
             );
     }
 
-    /**
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
-     */
     public function createContentTypeInvalidErrorResponse(): RestResponseInterface
     {
         return $this->restResourceBuilder
@@ -76,12 +64,6 @@ class ContentBannerRestResponseBuilder implements ContentBannerRestResponseBuild
             );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ContentBannerTypeTransfer $contentBannerTypeTransfer
-     * @param string $contentBannerKey
-     *
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
-     */
     public function createContentBannersRestResponse(
         ContentBannerTypeTransfer $contentBannerTypeTransfer,
         string $contentBannerKey
@@ -111,12 +93,6 @@ class ContentBannerRestResponseBuilder implements ContentBannerRestResponseBuild
         return $contentBannersRestResources;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ContentBannerTypeTransfer $contentBannerTypeTransfer
-     * @param string $contentBannerKey
-     *
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResourceInterface
-     */
     protected function createContentBannersRestResource(
         ContentBannerTypeTransfer $contentBannerTypeTransfer,
         string $contentBannerKey

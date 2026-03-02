@@ -21,11 +21,6 @@ class ContentBannersRestApiDependencyProvider extends AbstractBundleDependencyPr
      */
     public const CLIENT_CONTENT_BANNER = 'CLIENT_CONTENT_BANNER';
 
-    /**
-     * @param \Spryker\Glue\Kernel\Container $container
-     *
-     * @return \Spryker\Glue\Kernel\Container
-     */
     public function provideDependencies(Container $container): Container
     {
         $container = parent::provideDependencies($container);
@@ -35,11 +30,6 @@ class ContentBannersRestApiDependencyProvider extends AbstractBundleDependencyPr
         return $container;
     }
 
-    /**
-     * @param \Spryker\Glue\Kernel\Container $container
-     *
-     * @return \Spryker\Glue\Kernel\Container
-     */
     protected function addContentBannerClient(Container $container): Container
     {
         $container->set(static::CLIENT_CONTENT_BANNER, function (Container $container) {

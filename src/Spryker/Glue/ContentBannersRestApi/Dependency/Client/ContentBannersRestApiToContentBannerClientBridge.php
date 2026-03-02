@@ -24,12 +24,6 @@ class ContentBannersRestApiToContentBannerClientBridge implements ContentBanners
         $this->contentBannerClient = $contentBannerClient;
     }
 
-    /**
-     * @param string $contentKey
-     * @param string $localeName
-     *
-     * @return \Generated\Shared\Transfer\ContentBannerTypeTransfer|null
-     */
     public function executeBannerTypeByKey(string $contentKey, string $localeName): ?ContentBannerTypeTransfer
     {
         return $this->contentBannerClient->executeBannerTypeByKey($contentKey, $localeName);

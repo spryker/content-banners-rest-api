@@ -16,9 +16,6 @@ use Spryker\Glue\Kernel\AbstractFactory;
 
 class ContentBannersRestApiFactory extends AbstractFactory
 {
-    /**
-     * @return \Spryker\Glue\ContentBannersRestApi\Processor\Reader\ContentBannerReaderInterface
-     */
     public function createContentBannerReader(): ContentBannerReaderInterface
     {
         return new ContentBannerReader(
@@ -27,17 +24,11 @@ class ContentBannersRestApiFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Glue\ContentBannersRestApi\Processor\RestResponseBuilder\ContentBannerRestResponseBuilderInterface
-     */
     public function createContentBannerRestResponseBuilder(): ContentBannerRestResponseBuilderInterface
     {
         return new ContentBannerRestResponseBuilder($this->getResourceBuilder());
     }
 
-    /**
-     * @return \Spryker\Glue\ContentBannersRestApi\Dependency\Client\ContentBannersRestApiToContentBannerClientInterface
-     */
     public function getContentBannerClient(): ContentBannersRestApiToContentBannerClientInterface
     {
         return $this->getProvidedDependency(ContentBannersRestApiDependencyProvider::CLIENT_CONTENT_BANNER);

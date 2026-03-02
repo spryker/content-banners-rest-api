@@ -25,10 +25,6 @@ class ContentBannerReader implements ContentBannerReaderInterface
      */
     protected $contentBannerRestResponseBuilder;
 
-    /**
-     * @param \Spryker\Glue\ContentBannersRestApi\Dependency\Client\ContentBannersRestApiToContentBannerClientInterface $contentBannerClient
-     * @param \Spryker\Glue\ContentBannersRestApi\Processor\RestResponseBuilder\ContentBannerRestResponseBuilderInterface $contentBannerRestResponseBuilder
-     */
     public function __construct(
         ContentBannersRestApiToContentBannerClientInterface $contentBannerClient,
         ContentBannerRestResponseBuilderInterface $contentBannerRestResponseBuilder
@@ -37,11 +33,6 @@ class ContentBannerReader implements ContentBannerReaderInterface
         $this->contentBannerRestResponseBuilder = $contentBannerRestResponseBuilder;
     }
 
-    /**
-     * @param \Spryker\Glue\GlueApplication\Rest\Request\Data\RestRequestInterface $restRequest
-     *
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
-     */
     public function getContentBannerById(RestRequestInterface $restRequest): RestResponseInterface
     {
         $contentBannerKey = $restRequest->getResource()->getId();

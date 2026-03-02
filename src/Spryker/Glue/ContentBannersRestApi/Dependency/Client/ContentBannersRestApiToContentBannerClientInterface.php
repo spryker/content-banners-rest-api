@@ -11,12 +11,6 @@ use Generated\Shared\Transfer\ContentBannerTypeTransfer;
 
 interface ContentBannersRestApiToContentBannerClientInterface
 {
-    /**
-     * @param string $contentKey
-     * @param string $localeName
-     *
-     * @return \Generated\Shared\Transfer\ContentBannerTypeTransfer|null
-     */
     public function executeBannerTypeByKey(string $contentKey, string $localeName): ?ContentBannerTypeTransfer;
 
     /**
