@@ -1,0 +1,92 @@
+resource:
+    name: ContentBanners
+    shortName: content-banners
+    description: 'Content banner items'
+
+    provider: Spryker\Glue\ContentBannersRestApi\Api\Storefront\Provider\ContentBannersStorefrontProvider
+
+    paginationEnabled: false
+
+    operations:
+        - type: Get
+          uriTemplate: '/content-banners/{id}'
+          uriVariables:
+              id:
+                  identifiers: [id]
+          description: 'Retrieve a content banner by content key.'
+          openapiContext:
+              summary: 'Retrieve a content banner'
+              description: 'Returns the content banner identified by its content key for the current locale.'
+              responses:
+                  200:
+                      description: 'Content banner returned.'
+                  404:
+                      description: 'Content not found.'
+                  422:
+                      description: 'Content type is invalid.'
+
+        - type: GetCollection
+          uriTemplate: '/content-banners'
+          description: 'Returns 400 when called without the content key.'
+          openapiContext:
+              summary: 'List content banners (always 400)'
+              description: 'Content banners are addressed by content key; the bare collection URL always returns 400 "Content key is missing".'
+              responses:
+                  400:
+                      description: 'Content key is missing.'
+
+    properties:
+        id:
+            type: string
+            identifier: true
+            writable: false
+            readable: true
+            required: false
+            description: 'Content banner key.'
+            openapiContext:
+                example: 'banner-1'
+
+        title:
+            type: string
+            writable: false
+            readable: true
+            required: false
+            description: 'Banner title.'
+            openapiContext:
+                example: 'Summer Sale'
+
+        subtitle:
+            type: string
+            writable: false
+            readable: true
+            required: false
+            description: 'Banner subtitle.'
+            openapiContext:
+                example: 'Up to 50% off'
+
+        imageUrl:
+            type: string
+            writable: false
+            readable: true
+            required: false
+            description: 'URL of the banner image.'
+            openapiContext:
+                example: 'https://images.spryker.com/banners/summer.jpg'
+
+        clickUrl:
+            type: string
+            writable: false
+            readable: true
+            required: false
+            description: 'URL to navigate to when the banner is clicked.'
+            openapiContext:
+                example: '/en/summer-sale'
+
+        altText:
+            type: string
+            writable: false
+            readable: true
+            required: false
+            description: 'Alternative text for the banner image (accessibility).'
+            openapiContext:
+                example: 'Summer sale promotional banner'
