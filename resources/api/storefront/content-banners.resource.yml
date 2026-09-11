@@ -27,6 +27,7 @@ resource:
 
         - type: GetCollection
           uriTemplate: '/content-banners'
+          openapi: false
           description: 'Returns 400 when called without the content key.'
           openapiContext:
               summary: 'List content banners (always 400)'
