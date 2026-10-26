@@ -22,4 +22,8 @@
         <property name="status" type="int" description="A HTTP status code."/>
         <property name="detail" type="string" description="A detailed error message providing more specific information about an issue."/>
     </transfer>
+
+    <transfer name="Locale">
+        <property name="localeName" type="string"/>
+    </transfer>
 </transfers>
